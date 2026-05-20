@@ -1,5 +1,5 @@
-#import "@preview/subpar:0.2.0"
-#import "@preview/physica:0.9.4": *
+#import "@preview/subpar:0.2.2"
+#import "@preview/physica:0.9.5": *
 
 #let stroke-color = luma(200)
 #let std-bibliography = bibliography
@@ -27,7 +27,7 @@
       },
     numbering-sub-ref: (m, n) => if isappendix.get() {numbering("A.1a", counter(heading).get().first(), m, n)
       } else {
-        numbering("a", m, n)
+        numbering("1.1a", counter(heading).get().first(), m, n)
       }
   )
 }
@@ -78,8 +78,7 @@
     page(align(center + horizon, block(width: 90%)[
         #let v-space = v(2em, weak: true)
         #text(2em)[*#title*]
-
-        #v(0%) 
+ 
         #for author in authors {
           text(1.1em, author)
           v(0.7em, weak: true)
@@ -91,7 +90,7 @@
           text(1.1em, date.display(date-format))
         }
     ]))
-  }
+  } 
   
   //Paragraph properties
   set par(spacing: 0.7em, leading: 0.7em, justify: true, linebreaks: "optimized", first-line-indent: 1.2em)
@@ -203,7 +202,7 @@
       let before = query(target.before(here()))
       if before.len() >= 0 {
         let current = before.last()
-        if query(target).any(it => it.location().page() == current.location().page()+1) {
+        if query(target).any(it => it.location().page() == here().page()) {
           return
         }
         let chapter_number = counter(heading).at(here()).first()
