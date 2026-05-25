@@ -42,8 +42,7 @@
   paper-size: "a4",
   date: datetime.today(),
   date-format: "[day padding:zero]/[month repr:numerical]/[year repr:full]",
-  abstract-en: none,
-  abstract-no: none,
+  abstracts: none,
   preface: none,
   table-of-contents: outline(),
   titlepage: true,
@@ -138,20 +137,16 @@
     v(1.3em, weak: true)
   }
   
-  //Show abstract
-  if abstract-en != none {
-    page([
-      = Abstract
-      #abstract-en
-    ])
+  // Show abstracts
+  if abstracts != none {
+    for abstract in abstracts {
+      page([
+        #heading(level: 1, numbering: none)[#abstract.at(0)]
+        #abstract.at(1)
+      ])
+    }
   }
-  //Show abstract
-  if abstract-no != none {
-    page([
-      = Sammendrag
-      #abstract-no
-    ])
-  }
+
   //Show preface
   if preface != none {
     page([
