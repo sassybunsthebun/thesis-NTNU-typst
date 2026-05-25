@@ -1,5 +1,5 @@
 # NTNU thesis template
-Port of [thesis-NTNU](https://github.com/COPCSE-NTNU/thesis-NTNU) template to Typst. [main.pdf](https://github.com/saimnaveediqbal/thesis-NTNU-typst/blob/main/template/main.typ) contains a full usage example. See [example.pdf](https://github.com/saimnaveediqbal/thesis-NTNU-typst/blob/main/example.pdf) for a rendered pdf, and documentation of the template.
+Port of [thesis-NTNU](https://github.com/COPCSE-NTNU/thesis-NTNU) template to Typst. `main.typ` contains a full usage example. See `example.pdf`for a rendered PDF, and documentation of the template.
 
 # Usage
 To use this template you need to import it at the beginning of your document: 
